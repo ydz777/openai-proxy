@@ -8,7 +8,7 @@ serve(async (request) => {
   if (url.pathname === '/') {
     return fetch(new URL('./Readme.md', import.meta.url))
   }
-  console.log(request.headers.get('authorization'))
+
   url.host = OPENAI_API_HOST
   return await fetch(url, request)
 })
