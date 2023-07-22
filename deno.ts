@@ -10,14 +10,6 @@ serve(async (request) => {
     return fetch(new URL('./Readme.md', import.meta.url))
   }
 
-  readDataStream(request.body)
   url.host = OPENAI_API_HOST
   return await fetch(url, request)
 })
-
-// 读取request数据流
-const readDataStream = async (flow: any) => {
-  const stdinContent = await readAll(flow)
-
-  console.log(stdinContent.toString())
-}
